@@ -1,0 +1,17 @@
+export const Colors = {
+  Blue1: '#003EB3',
+  Blue2: '#1A6AFF',
+  Blue3: '#80ACFF',
+  Blue4: '#E6EEFF',
+  Warning1: '#DB2C00',
+  Warning2: '#FF6842',
+  Success: '#00BFA5',
+  Caution: '#FF6D00',
+  Black: '#0B0C0F',
+  Gray1: '#2B313B',
+  Gray2: '#7B879D',
+  Gray3: '#E2E4E9',
+  Gray4: '#F3F4F6',
+  Gray5: '#FBFCFF',
+  White: '#FFFFFF',
+} as const;
