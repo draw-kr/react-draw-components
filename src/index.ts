@@ -4,3 +4,5 @@ export * from './styles/TextTheme';
 
 export * from './components/typo';
 export * from './components/FontLink';
+export * from './components/Button';
+export * from './components/Input';
