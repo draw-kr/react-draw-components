@@ -1,6 +1,6 @@
 {
   "name": "react-draw-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
@@ -17,6 +17,8 @@
     "watch:build": "tsc -p tsconfig.json -w"
   },
   "devDependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@mui/material": "5.8.3",
     "@types/node": "16.11.14",
     "@types/styled-components": "5.1.25",
@@ -40,6 +42,8 @@
   "peerDependencies": {
     "@emotion/react": ">11.0.0",
     "@emotion/styled": ">11.0.0",
+    "@material-ui/core": ">4.0.0",
+    "@material-ui/icons": ">4.0.0",
     "@mui/material": ">5.0.0",
     "react": ">17.0.0",
     "styled-components": ">4.0.0"
