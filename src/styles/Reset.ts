@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { Colors } from './Colors';
 import { TextTheme } from './TextTheme';
 
 export default createGlobalStyle`
@@ -21,6 +22,11 @@ export default createGlobalStyle`
 		border: 0;
 		vertical-align: baseline;
 		${TextTheme.FontFamilySUIT}
+	}
+
+	a {
+		color: ${Colors.Black};
+		text-decoration: none;
 	}
 
 	/* HTML5 display-role reset for older browsers */
