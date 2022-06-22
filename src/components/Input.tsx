@@ -12,34 +12,61 @@ import styled from 'styled-components';
 
 const InputContainer = styled.div``;
 
-export const Input: React.FC<{
+export interface InputProps {
   label: string;
-}> = ({ label }) => {
+  fullWidth?: boolean;
+  className?: string;
+}
+
+export const Input: React.FC<InputProps> = ({
+  label,
+  className,
+  fullWidth,
+}) => {
   return (
-    <InputContainer>
-      <TextField id="standard-basic" label={label} variant="outlined" />
+    <InputContainer className={className}>
+      <TextField
+        id="standard-basic"
+        label={label}
+        style={fullWidth ? { width: '100%' } : {}}
+        variant="outlined"
+      />
     </InputContainer>
   );
 };
 
 const EmailInputContainer = styled.div``;
 
-export const EmailInput: React.FC<{
-  label: string;
-}> = ({ label }) => {
+export const EmailInput: React.FC<InputProps> = ({
+  label,
+  className,
+  fullWidth,
+}) => {
   return (
-    <EmailInputContainer>
-      <TextField id="standard-basic" label={label} variant="outlined" />
+    <EmailInputContainer className={className}>
+      <TextField
+        id="standard-basic"
+        label={label}
+        style={fullWidth ? { width: '100%' } : {}}
+        variant="outlined"
+      />
     </EmailInputContainer>
   );
 };
 
 const PasswordInputContainer = styled.div``;
 
-export const PasswordInput: React.FC<{ label: string }> = ({ label }) => {
+export const PasswordInput: React.FC<InputProps> = ({
+  label,
+  className,
+  fullWidth,
+}) => {
   return (
-    <PasswordInputContainer>
-      <FormControl variant="outlined">
+    <PasswordInputContainer className={className}>
+      <FormControl
+        variant="outlined"
+        style={fullWidth ? { width: '100%' } : {}}
+      >
         <InputLabel htmlFor="outlined-adornment-pass2word">Password</InputLabel>
         <OutlinedInput
           id="outlined-adornment-password"

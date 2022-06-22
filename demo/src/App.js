@@ -6,7 +6,7 @@ function App() {
       <Typo.H1>hello</Typo.H1>
 
       <Button text="asdds" />
-      <Input text="asdds" />
+      <Input text="asdds" fullWidth />
     </div>
   );
 }
