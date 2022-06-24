@@ -7,13 +7,15 @@ import {
   InputLabel,
   OutlinedInput,
 } from '@mui/material';
-import React from 'react';
+import React, { ChangeEventHandler } from 'react';
 import styled from 'styled-components';
 
 const InputContainer = styled.div``;
 
 export interface InputProps {
   label: string;
+  value: string;
+  onChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   fullWidth?: boolean;
   className?: string;
 }
@@ -22,6 +24,8 @@ export const Input: React.FC<InputProps> = ({
   label,
   className,
   fullWidth,
+  value,
+  onChange,
 }) => {
   return (
     <InputContainer className={className}>
@@ -30,6 +34,8 @@ export const Input: React.FC<InputProps> = ({
         label={label}
         style={fullWidth ? { width: '100%' } : {}}
         variant="outlined"
+        value={value}
+        onChange={onChange}
       />
     </InputContainer>
   );
@@ -41,6 +47,8 @@ export const EmailInput: React.FC<InputProps> = ({
   label,
   className,
   fullWidth,
+  value,
+  onChange,
 }) => {
   return (
     <EmailInputContainer className={className}>
@@ -49,6 +57,8 @@ export const EmailInput: React.FC<InputProps> = ({
         label={label}
         style={fullWidth ? { width: '100%' } : {}}
         variant="outlined"
+        value={value}
+        onChange={onChange}
       />
     </EmailInputContainer>
   );
@@ -60,6 +70,8 @@ export const PasswordInput: React.FC<InputProps> = ({
   label,
   className,
   fullWidth,
+  value,
+  onChange,
 }) => {
   return (
     <PasswordInputContainer className={className}>
@@ -67,10 +79,12 @@ export const PasswordInput: React.FC<InputProps> = ({
         variant="outlined"
         style={fullWidth ? { width: '100%' } : {}}
       >
-        <InputLabel htmlFor="outlined-adornment-pass2word">Password</InputLabel>
+        <InputLabel htmlFor="outlined-adornment-pass2word">{label}</InputLabel>
         <OutlinedInput
           id="outlined-adornment-password"
           type="password"
+          value={value}
+          onChange={onChange}
           endAdornment={
             <InputAdornment position="end">
               <IconButton aria-label="toggle password visibility" edge="end">
