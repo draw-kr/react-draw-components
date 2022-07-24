@@ -14,8 +14,8 @@ const InputContainer = styled.div``;
 
 export interface InputProps {
   label: string;
-  value: string;
-  onChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   fullWidth?: boolean;
   className?: string;
 }
