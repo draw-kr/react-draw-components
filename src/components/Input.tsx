@@ -7,7 +7,7 @@ import {
   InputLabel,
   OutlinedInput,
 } from '@mui/material';
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, CSSProperties } from 'react';
 import styled from 'styled-components';
 
 const InputContainer = styled.div``;
@@ -18,6 +18,7 @@ export interface InputProps {
   onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   fullWidth?: boolean;
   className?: string;
+  style?: CSSProperties;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -26,13 +27,14 @@ export const Input: React.FC<InputProps> = ({
   fullWidth,
   value,
   onChange,
+  style,
 }) => {
   return (
     <InputContainer className={className}>
       <TextField
         id="standard-basic"
         label={label}
-        style={fullWidth ? { width: '100%' } : {}}
+        style={fullWidth ? { width: '100%', ...style } : style}
         variant="outlined"
         value={value}
         onChange={onChange}
@@ -49,13 +51,14 @@ export const EmailInput: React.FC<InputProps> = ({
   fullWidth,
   value,
   onChange,
+  style,
 }) => {
   return (
     <EmailInputContainer className={className}>
       <TextField
         id="standard-basic"
         label={label}
-        style={fullWidth ? { width: '100%' } : {}}
+        style={fullWidth ? { width: '100%', ...style } : style}
         variant="outlined"
         value={value}
         onChange={onChange}
@@ -72,12 +75,13 @@ export const PasswordInput: React.FC<InputProps> = ({
   fullWidth,
   value,
   onChange,
+  style,
 }) => {
   return (
     <PasswordInputContainer className={className}>
       <FormControl
         variant="outlined"
-        style={fullWidth ? { width: '100%' } : {}}
+        style={fullWidth ? { width: '100%', ...style } : style}
       >
         <InputLabel htmlFor="outlined-adornment-pass2word">{label}</InputLabel>
         <OutlinedInput
