@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import styled, { css } from 'styled-components';
 
 import { Colors } from '../styles/Colors';
@@ -95,12 +95,14 @@ export const Button: React.FC<{
   onClick?: () => unknown;
   type?: ButtonType;
   isDisabled?: boolean;
-}> = ({ text, onClick, type, isDisabled }) => {
+  style?: CSSProperties;
+}> = ({ text, onClick, type, isDisabled, style }) => {
   return (
     <ButtonContainer
       type={type}
       disabled={isDisabled}
       onClick={isDisabled ? undefined : onClick}
+      style={style}
     >
       {text}
     </ButtonContainer>
